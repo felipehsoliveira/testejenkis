@@ -1,0 +1,28 @@
+class Example
+
+  include Capybara::DSL
+
+  def buttons_click
+    all("button").each do |btn|
+      btn.click
+    end
+  end
+
+  def all_check_box
+    all("*[type='checkbox']").each(&:click)
+  end
+
+  def fill_each_fields
+    all("input[class='form-control']").each do |field|
+      field.set("#{field['placeholder']} #{rand(100..999)}")
+    end
+  end
+
+  def has_buttons
+    assert_selector("#btn_one1")
+    assert_selector("#btn_two")
+    assert_selector("#btn_three")
+    assert_selector("#btn_link")
+  end
+
+end
