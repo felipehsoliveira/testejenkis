@@ -1,1 +1,6 @@
-default: --no-source --color --format pretty --format html --out=data/report.html --format json --out=data/report.json
+#default: --no-source --color --format pretty --format html --out=data/report.html --format json --out=data/report.json
+
+default: -p html_report -p poltergeist -p qa
+ci: -p json_report -p poltergeist -p qa
+html_report: --format pretty --format html --out=reports/features_report.html
+json_report: --format progress --format json --out=reports/features_report.json
