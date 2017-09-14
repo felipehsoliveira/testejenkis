@@ -5,7 +5,9 @@ Before do
 end
 
 After do |scenario|
+  if scenario.failed?
         filename = "error-#{@current_page.class}-#{Time.now}.png" 
         save_screenshot(filename)
         embed(filename, 'image/png')
+    end
 end

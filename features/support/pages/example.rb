@@ -19,7 +19,7 @@ class Example
   end
 
   def has_buttons
-    assert_selector("#btn_one")
+    assert_selector("#btn_one1")
     assert_selector("#btn_two")
     assert_selector("#btn_three")
     assert_selector("#btn_link")
